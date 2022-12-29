@@ -37,14 +37,20 @@ $people = array( $rob, $joe, $erin, $steve, $bill, $walt, $bob );
     } else {
         return strcmp($a->last_name, $b->last_name);
     };
-});*/
+});
+*/
 
 
 usort($people, function ($a, $b) {
     $result = (strcmp($a->last_name, $b->last_name) == 0) ? strcmp($a->first_name, $b->first_name) : strcmp($a->last_name, $b->last_name);
     return $result;
-    });
+});
 
+/*
+usort($people, function($a, $b) {
+    return [$a->last_name, $a->first_name] <=> [$b->last_name, $b->first_name];
+});
+*/
 ?>
 
 <pre>
