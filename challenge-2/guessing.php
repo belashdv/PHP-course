@@ -20,3 +20,5 @@ $message = match (true) {
 };
 
 echo "<p>$message</p>";
+
+?>
