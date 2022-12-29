@@ -31,13 +31,19 @@ $people = array( $rob, $joe, $erin, $steve, $bill, $walt, $bob );
 
 
 
-usort($people, function ($a, $b) {
+/*usort($people, function ($a, $b) {
     if (strcmp($a->last_name, $b->last_name) == 0) {
         return strcmp($a->first_name, $b->first_name);
     } else {
         return strcmp($a->last_name, $b->last_name);
     };
-});
+});*/
+
+
+usort($people, function ($a, $b) {
+    $result = (strcmp($a->last_name, $b->last_name) == 0) ? strcmp($a->first_name, $b->first_name) : strcmp($a->last_name, $b->last_name);
+    return $result;
+    });
 
 ?>
 
